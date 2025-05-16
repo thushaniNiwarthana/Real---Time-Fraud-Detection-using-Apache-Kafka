@@ -1,0 +1,265 @@
+/*  Base Styles  */
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #1abc9c;
+    --danger: #e74c3c;
+    --success: #2ecc71;
+    --info: #3498db;
+    --light: #f8f9fa;
+    --dark: #333;
+    --white: #fff;
+    --gray: #666;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/*  Sidebar  */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    position: fixed;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menu-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.menu-item {
+    width: calc(100% - 40px);
+    padding: 12px 20px;
+    margin: 5px 5px;
+    background-color: var(--secondary);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.menu-item:hover {
+    background-color: var(--accent);
+    transform: translateX(5px);
+}
+
+/*  Main Content  */
+.content {
+    margin-left: 250px;
+    padding: 25px;
+    transition: margin-left 0.3s;
+}
+
+.section-title {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/*  Metrics Display  */
+.metrics-container {
+    gap: 20px;
+}
+
+.metric-card {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--accent);
+}
+
+.metric-card h4 {
+    margin-top: 0;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.metric-description {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/*  Transaction Logs  */
+.log-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.transaction-block {
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background: var(--white);
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.transaction-line strong {
+    color: var(--primary);
+}
+
+/*  Counters  */
+.counters-panel {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.counter {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#fraud-counter {
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+#non-fraud-counter {
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+/*  Buttons  */
+.btn {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--accent), 10%);
+    transform: translateY(-2px);
+}
+
+/*  Responsive Design  */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        min-height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .counters-panel {
+        flex-direction: column;
+    }
+
+    .metrics-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*  Animations  */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/*Styling the dashborad display*/
+
+.metric-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+
+/* Styling for the metrics table */
+.metrics-table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.metrics-table th, .metrics-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.metrics-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Styling for the fraud patterns table */
+.fraud-patterns-table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.fraud-patterns-table th, .fraud-patterns-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.fraud-patterns-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* General styling for the page */
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

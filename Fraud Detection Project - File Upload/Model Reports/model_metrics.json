@@ -1,0 +1,38 @@
+{
+    "Logistic Regression": {
+        "accuracy": 66.24444444444444,
+        "precision": 0.6629050002760103,
+        "recall": 0.6624444444444444,
+        "f1-score": 0.6625828762994151,
+        "roc_auc": 0.7164645615418376,
+        "specificity": 0.6583148817154177,
+        "false_positive_rate": 0.3416851182845822,
+        "false_negative_rate": 0.33379339632657395,
+        "matthews_corrcoef": 0.3242553843744309,
+        "log_loss": 0.6206241177897516
+    },
+    "Random Forest": {
+        "accuracy": 80.5,
+        "precision": 0.8052009672631885,
+        "recall": 0.805,
+        "f1-score": 0.8050565193411282,
+        "roc_auc": 0.8772884817053912,
+        "specificity": 0.8032280619974362,
+        "false_positive_rate": 0.19677193800256382,
+        "false_negative_rate": 0.19338570973564073,
+        "matthews_corrcoef": 0.6094889185473074,
+        "log_loss": 0.4387641869019233
+    },
+    "XGBoost": {
+        "accuracy": 76.72222222222223,
+        "precision": 0.7676793434096532,
+        "recall": 0.7672222222222222,
+        "f1-score": 0.7673233451522026,
+        "roc_auc": 0.8364239048414552,
+        "specificity": 0.7693741988113274,
+        "false_positive_rate": 0.23062580118867265,
+        "false_negative_rate": 0.23473829493576812,
+        "matthews_corrcoef": 0.5341715170360193,
+        "log_loss": 0.5019010401280113
+    }
+}
